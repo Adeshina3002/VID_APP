@@ -26,7 +26,7 @@ router.get ('/user/:id', (req, res) => {
     }
 })
 
-router.post ('/reg', (req, res) => {
+router.post ('/signup', (req, res) => {
 
     const schema = Joi.object({
         name: Joi.string().required(),
@@ -40,9 +40,6 @@ router.post ('/reg', (req, res) => {
         res.status(400).send(result.error.details[0].message)
         return
     }
-
-    // const newUser = req.body 
-    // newUser.id = users.length + 1
 
     const newUser = { 
        id : users.length + 1, 
