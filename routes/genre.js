@@ -14,23 +14,19 @@ router.get ('/', (req, res) => {
 router.get ('/:id', (req, res) => {
     const found = movieGenres.find (genre => genre.id === parseInt(req.params.id))
 
-    if (!found) {
-        res.status(404).send(`Movie genre with ID ${req.params.id} not found`)
-        return 
-    } else {
-        res.status(200).json(found)
-    }
+    if (!found) return res.status(404).send(`Movie genre with ID ${req.params.id} not found`)
+        
+    res.status(200).json(found)
+    
 })
 
 router.get ('/type/:name', (req, res) => {
     const found = movieGenres.find(genre => genre.name.toLowerCase() == req.params.name.toLowerCase())
 
-    if (!found) {
-        res.status(404).send(`The movie with the genre ${req.params.name} not found`)
-        return
-    } else {
+    if (!found) return res.status(404).send(`The movie with the genre ${req.params.name} not found`)
+        
         res.status(200).json(found)
-    }
+    
 })
 
 router.post ('/', (req, res) => {
@@ -41,11 +37,8 @@ router.post ('/', (req, res) => {
 
     const result = schema.validate(req.body)
 
-    if (result.error) {
-        res.status(400).send(result.error.details[0].message)
-        return
-    }
-
+    if (result.error) return res.status(400).send(result.error.details[0].message)
+      
     const newGenre = {
         id : movieGenres.length + 1,
         name : req.body.name
@@ -58,22 +51,16 @@ router.post ('/', (req, res) => {
 router.put ('/:id', (req, res) => {
     const found = movieGenres.find (genre => genre.id === parseInt (req.params.id))
 
-    if (!found) {
-        res.status(404).send(`Movie genre with ID ${req.params.id} not found`)
-        return
-    }
-
+    if (!found) return res.status(404).send(`Movie genre with ID ${req.params.id} not found`)
+       
     const schema = Joi.object ({
         name : Joi.string().min(3).required()
     })
 
     const result = schema.validate(req.body)
 
-    if (result.error) {
-        res.status(400).send(result.error.details[0].message)
-        return
-    }
-
+    if (result.error) return res.status(400).send(result.error.details[0].message)
+       
     found.name = req.body.name
     res.send(found)
 })
@@ -86,9 +73,9 @@ router.delete ('/:id', (req, res) => {
         movieGenres.splice(indexCheck, 1)
         res.status(200).send(`Movie genre with ID ${req.params.id} successfully deleted`)
         return
-    } else {
+    } 
         res.status(404).send(`Movie genre with ID ${req.params.id} not found`)
-    }
+    
 })
 
 

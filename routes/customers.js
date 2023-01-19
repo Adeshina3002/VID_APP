@@ -17,13 +17,10 @@ router.get ('/', (req, res) => {
 
 router.get ('/user/:id', (req, res) => {
     const found = users.find (user => user.id === parseInt(req.params.id)) 
-    if(!found) {
-        res.status(404).send(`User with ID :${req.params.id} not found`)
-        return
-    }
-    else {
+    if(!found) return res.status(404).send(`User with ID :${req.params.id} not found`)
+       
         res.status(200).json(found)
-    }
+    
 })
 
 router.post ('/signup', (req, res) => {
@@ -49,7 +46,7 @@ router.post ('/signup', (req, res) => {
     }
 
      const getAge = (birthYear) => {
-        return newUser.age = new Date ().getFullYear() - birthYear
+        newUser.age = new Date ().getFullYear() - birthYear
     }
 
     console.log(getAge(newUser.birthYear));
@@ -90,7 +87,7 @@ router.put ('/user/:id', (req, res) => {
     }
 
     const getAge = (birthYear) => {
-        return updateUser.age = new Date ().getFullYear() - birthYear
+        updateUser.age = new Date ().getFullYear() - birthYear
     }
 
     console.log(getAge(updateUser.birthYear));
