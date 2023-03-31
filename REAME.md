@@ -1,3 +1,3 @@
 # VID APP - movie rental project
 
-## It is  an imaginary service for renting out movies
+## It is an application service for renting out movies
