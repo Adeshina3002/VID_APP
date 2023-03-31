@@ -48,7 +48,7 @@ const createGenre = async (req, res) => {
         movie.genres.addToSet(createdGenre._id)
         movie.save()
         
-        res.status(StatusCodes.CREATED).json({message: "Data created successfully", createGenre})
+        res.status(StatusCodes.CREATED).json({message: `Genre added to the ${movie.title} successfully`, createGenre})
         
     } catch (error) {
         return res.status(StatusCodes.BAD_REQUEST).json({error})
