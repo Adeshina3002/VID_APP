@@ -20,7 +20,7 @@ const getAllGenre = async (req, res) => {
         res.status(StatusCodes.OK).json({ genres }) 
         
     } catch (error) {
-        res.status(StatusCodes.BAD_REQUEST).json({ error })
+        res.status(StatusCodes.BAD_REQUEST).json({ error: error.message })
     }
 }
 
