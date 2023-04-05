@@ -7,19 +7,19 @@ const {getAllGenre, createGenre, getGenre, updateGenre, deleteGenre} = require("
 router.get ('/', getAllGenre)
 
 // Fetch a single genre using GET method
-// routes: /api/v1/genres/:id
+// routes: /api/genres/:id
 router.get ('/:id', getGenre)
 
 // create a genre using POST method
-// routes: /api/v1/genres/:movieId
+// routes: /api/genres/:movieId
 router.post ('/:movieId', createGenre)
 
 // update a genre using PUT method
-// routes: /api/v1/genres/:id
+// routes: /api/genres/:id
 router.put ('/:id', updateGenre)
 
 // delete a genre using DELETE method
-// routes: /api/v1/genres/:id
+// routes: /api/genres/:id
 router.delete ('/:id', deleteGenre)
 
 

@@ -12,15 +12,15 @@ router.get ('/', getAllCustomers)
 router.get ('/:id', getCustomer)
 
 //  Post a customer
-// routes: /api/v1/customers/signup
+// routes: /api/customers/signup
 router.post('/signup', createCustomer)
 
 // Update a customer details
-// routes: /api/v1/customers/:id
+// routes: /api/customers/:id
 router.put ('/:id', updateCustomer)
 
 // delete a customer 
-// routes: /api/v1/customers/:id
+// routes: /api/customers/:id
 router.delete('/:id', deleteCustomer)
 
 

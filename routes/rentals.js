@@ -8,19 +8,19 @@ const router = express.Router()
 router.get("/", getAllRentals)
 
 // GET A RENTALS
-// routes: /api/v1/rentals/:id
+// routes: /api/rentals/:id
 router.get("/", getRental)
 
 // POST A RENTAL
-// routes: /api/v1/rentals/:movieId/:customerId
+// routes: /api/rentals/:movieId/:customerId
 router.post('/:movieId/:customerId', createRentals)
 
 // UPDATE A RENTAL
-// routes: /api/v1/rentals/:movieId/:customerId
+// routes: /api/rentals/:movieId/:customerId
 router.put('/:movieId/:customerId', updateRental)
 
 // DELETE A RENTAL
-// routes: /api/v1/rentals
+// routes: /api/rentals
 router.delete('/id', deleteRental)
 
 

@@ -7,19 +7,19 @@ const {getAllMovie, createMovie, getMovie, updateMovie, deleteMovie} = require("
 router.get ('/', getAllMovie)
 
 // Fetch a single movie uisng GET method
-// route: /api/v1/movies/:id
+// route: /api/movies/:id
 router.get ('/:id', getMovie)
 
 // create a movie using POST method
-// route: /api/v1/movies/
+// route: /api/movies/
 router.post ('/', createMovie)
 
 // update a movie using PUT method
-// route: /api/v1/movies/:id
+// route: /api/movies/:id
 router.put ('/:id', updateMovie)
 
 // delete a movie using DELETE method
-// route: /api/v1/movies/:id
+// route: /api/movies/:id
 router.delete ('/:id', deleteMovie)
 
 
