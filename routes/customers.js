@@ -8,19 +8,19 @@ const router = express.Router()
 router.get ('/', getAllCustomers)
 
 // Fetch a single customer
-// routes: /api/customers/:id
+// routes: /api/v1/customers/:id
 router.get ('/:id', getCustomer)
 
 //  Post a customer
-// routes: /api/customers/signup
+// routes: /api/v1/customers/signup
 router.post('/signup', createCustomer)
 
 // Update a customer details
-// routes: /api/customers/:id
+// routes: /api/v1/customers/:id
 router.put ('/:id', updateCustomer)
 
 // delete a customer 
-// routes: /api/customers/:id
+// routes: /api/v1/customers/:id
 router.delete('/:id', deleteCustomer)
 
 

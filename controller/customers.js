@@ -5,7 +5,7 @@ const { BadRequestError, UnauthenticatedError } = require("../error")
 
 
 // Fetch all customers using GET method
-// routes: /api/customers/
+// routes: /api/v1/customers/
 const getAllCustomers = async (req, res) => {
     try {
 
@@ -25,7 +25,7 @@ const getAllCustomers = async (req, res) => {
 
 
 // create a Customer using a POST method
-// routes: /api/customers/signup
+// routes: /api/v1/customers/signup
 const createCustomer = async (req, res, next) => {
     try {
        const { name, isGold, phoneNumber } = req.body
@@ -54,7 +54,7 @@ const createCustomer = async (req, res, next) => {
 }
 
 // Fetch a single Customer using GET method
-// routes: /api/customers/:id
+// routes: /api/v1/customers/:id
 const getCustomer = async (req, res) => {
     try {
         const { id } = req.params
@@ -79,7 +79,7 @@ const getCustomer = async (req, res) => {
 }
 
 // Update customer details using PUT method
-// routes: /api/customers/:id
+// routes: /api/v1/customers/:id
 const updateCustomer = async (req, res) => {
     try {
         // check if the customer ID was provided
@@ -115,7 +115,7 @@ const updateCustomer = async (req, res) => {
 }
 
 // delete customer info using DELETE method
-// routes: /api/customers/:id
+// routes: /api/v1/customers/:id
 const deleteCustomer = async (req, res) => {
 
     try {

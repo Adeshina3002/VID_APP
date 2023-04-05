@@ -5,7 +5,7 @@ const movieSchemas = require("../models/movies")
 const {StatusCodes} = require("http-status-codes")
 
 // Fetch all rentals using GET method
-// routes: /api/rentals
+// routes: /api/v1/rentals
  const getAllRentals = async (req, res) => {
     try {
         const rentals = await rentalSchema.find().sort("dateOut")
@@ -20,7 +20,7 @@ const {StatusCodes} = require("http-status-codes")
 }
 
 // Fetch a rental using GET method
-// routes: /api/rentals/:id
+// routes: /api/v1/rentals/:id
 const getRental = async(req, res) => {
     try {
         const rental = await rentalSchema.findOne({_id: req.params.id})
@@ -39,7 +39,7 @@ const getRental = async(req, res) => {
 }
 
 // CREATE a rental using POST method
-// routes: /api/rentals/:movieId/:customerId
+// routes: /api/v1/rentals/:movieId/:customerId
 const createRentals = async (req, res) => {
     try {
         const movie = await movieSchemas.findOne({_id: req.params.movieId})
@@ -73,7 +73,7 @@ const createRentals = async (req, res) => {
 
 
 // UPDATE a rental using PUT method
-// routes: /api/rentals
+// routes: /api/v1/rentals
 const updateRental = async (req, res) => {
     try {
         const rental = await rentalSchema.findOne({_id: req.params.id})
@@ -104,7 +104,7 @@ const updateRental = async (req, res) => {
 }
 
 // DELETE a rental using DELETE method
-// routes: /api/rentals/:id
+// routes: /api/v1/rentals/:id
 const deleteRental = async (req, res) => {
     try {
         const rental = await rentalSchema.find({_id:req.params.id})

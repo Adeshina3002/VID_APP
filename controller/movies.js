@@ -3,7 +3,7 @@ const { BadRequestError } = require("../error")
 const movieSchemas = require("../models/movies")
 
 // Fetch all genre using GET method
-// route: /api/movies
+// route: /api/v1/movies
 const getAllMovie = async (req, res) => {
     try {
         const movies = await movieSchemas.find()
@@ -23,7 +23,7 @@ const getAllMovie = async (req, res) => {
 }
 
 // Fetch all genre using GET method
-// route: /api/movies/:id
+// route: /api/v1/movies/:id
 const getMovie = async(req, res) => {
     try {
         const { id } = req.params
@@ -42,7 +42,7 @@ const getMovie = async(req, res) => {
 }
 
 // Fetch all genre using POST method
-// route: /api/movies
+// route: /api/v1/movies
 const createMovie = async (req, res) => {
     try {
         const { title, numberInStock, dailyRentalRate } = req.body 
@@ -60,7 +60,7 @@ const createMovie = async (req, res) => {
 }
 
 // Fetch all genre using PUT method
-// route: /api/movies/:id
+// route: /api/v1/movies/:id
 const updateMovie = async (req, res) => {
     try {
         // request the id 
@@ -87,7 +87,7 @@ const updateMovie = async (req, res) => {
 }
 
 // Fetch all genre using DELETE method
-// route: /api/movies/:id
+// route: /api/v1/movies/:id
 const deleteMovie = async (req, res) => {
     try {
         const { id } = req.params

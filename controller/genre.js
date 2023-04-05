@@ -5,7 +5,7 @@ const {BadRequestError, UnauthenticatedError} = require("../error")
 
 
 // fetch all genres using GET method
-// routes: /api/genres/
+// routes: /api/v1/genres/
 const getAllGenre = async (req, res) => { 
     try {
         const genres = await genreSchema.find().sort("name")
@@ -25,7 +25,7 @@ const getAllGenre = async (req, res) => {
 }
 
 // create genre using POST method
-// routes: /api/genres/:movieId
+// routes: /api/v1/genres/:movieId
 const createGenre = async (req, res) => {
     try {
 
@@ -56,7 +56,7 @@ const createGenre = async (req, res) => {
 }
 
 // get a single genre using GET method
-// routes: /api/genres/:id
+// routes: /api/v1/genres/:id
 const getGenre = async (req, res) => {
     try {
         const { id } = req.params 
@@ -80,7 +80,7 @@ const getGenre = async (req, res) => {
 }
 
 // update a genre using PUT method
-// routes: /api/genres/:id
+// routes: /api/v1/genres/:id
 const updateGenre = async (req, res) => {
     try {
         const { id } = req.params
@@ -105,7 +105,7 @@ const updateGenre = async (req, res) => {
 }
 
 // delete a genre using DELETE method
-// routes: /api/genres/:id
+// routes: /api/v1/genres/:id
 const deleteGenre = async (req, res) => {
     try {
         const {id} = req.params

@@ -12,10 +12,10 @@ app.use (morgan('dev'))
 app.use (express.json())
 app.use (express.urlencoded({extended : false}))
 
-app.use('/api/customers', customersRoute)
-app.use('/api/genres', genreRoute)
-app.use('/api/movies', moviesRoute)
-app.use('/api/rentals', rentalsRoute)
+app.use('/api/v1/customers', customersRoute)
+app.use('/api/v1/genres', genreRoute)
+app.use('/api/v1/movies', moviesRoute)
+app.use('/api/v1/rentals', rentalsRoute)
 
 app.get ('/api', (req, res) => {
     res.status(200).send("Welcome to Vid App")
