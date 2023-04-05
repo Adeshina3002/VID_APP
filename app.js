@@ -17,7 +17,7 @@ app.use('/api/v1/genres', genreRoute)
 app.use('/api/v1/movies', moviesRoute)
 app.use('/api/v1/rentals', rentalsRoute)
 
-app.get ('/api', (req, res) => {
+app.get ('/api/v1', (req, res) => {
     res.status(200).send("Welcome to Vid App")
 })
 
